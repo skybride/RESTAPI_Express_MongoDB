@@ -1,4 +1,5 @@
-require('dotenv/config');
+// require('dotenv/config');
+require('dotenv').config();
 
 const express = require('express');
 const server = express();
@@ -12,6 +13,11 @@ mongoose.connect(
     useUnifiedTopology: true },
     () => console.log("Connected to Database")
 );
+
+server.use(express.json());
+
+const subscribeRoute = require('./routes/subscribers');
+server.use('/subscribers', subscribeRoute);
 
 server.listen(port, () => {
     console.log('Started Server');
