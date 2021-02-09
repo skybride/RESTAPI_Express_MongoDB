@@ -1,4 +1,3 @@
-// require('dotenv/config');
 require('dotenv').config();
 
 const express = require('express');
@@ -22,12 +21,3 @@ server.use('/subscribers', subscribeRoute);
 server.listen(port, () => {
     console.log('Started Server');
 });
-
-// //Routes
-// server.get('/', (req, res) => {
-//     res.send('HOME');
-// });
-
-// server.get('/posts', (req, res) => {
-//     res.send('Posts');
-// });
